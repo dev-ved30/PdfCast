@@ -4,6 +4,11 @@ from gtts import gTTS
 import os
 import time
 
+START = 6
+END = 31
+SPLITTER = "< Chapter"
+
+
 def input():
     """
     This function asks the user to input a file through the standard OS
@@ -24,29 +29,27 @@ def input():
     )
 
     if root.filename:
-        print(root.filename)
+        tempArr1 = root.filename.split("/")
+        tempArr2 = tempArr1[len(tempArr1) - 1].split(".")
+        global FILE
+        FILE = tempArr2[0]
         return root.filename
 
 def PdfToText(path):
-    text = extract_text(path)
-    print(text)
-    # Language in which you want to convert 
+    text = extract_text(path, page_numbers = range(START, END))
+    arr = text.split(SPLITTER)
+    print(len(arr))
+    return arr
+
+def TextToSpeech(text_arr):
     language = 'en'
-    
-    # Passing the text and language to the engine,  
-    # here we have marked slow=False. Which tells  
-    # the module that the converted audio should  
-    # have a high speed 
-    myobj = gTTS(text=text, lang=language, slow=False) 
-    
-    # Saving the converted audio in a mp3 file named 
-    # welcome  
-    myobj.save("Coders.mp3") 
-    
+    i = 1
+    os.mkdir("results")
+    for text in text_arr:
+        recording = gTTS(text=text, lang=language, slow=False) 
+        recording.save("results/" + FILE + "_" + str(i) + ".mp3") 
+        i = i + 1
 
-##def TextToSpeech(text):
-
-print(time.time())
-path = input();
-PdfToText(path)
-print(time.time())
+path = input()
+text_arr = PdfToText(path)
+TextToSpeech(text_arr)
