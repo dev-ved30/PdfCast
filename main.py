@@ -82,7 +82,6 @@ def UploadPodcast():
     # Opening the website
     driver.get("https://anchor.fm/dashboard/episode/new")
 
-    a = driver.page_source
     # Entering Email
     email = driver.find_element_by_id("email")
     email.send_keys(EMAIL)
@@ -98,19 +97,33 @@ def UploadPodcast():
     time.sleep(5)
 
     # Clicking the button to open file dialog
-    # uploader = driver.find_element_by_class_name("styles__uploadAudioIcon___1BcDm").click()
-    driver.find_element_by_xpath("/html/body/div/div/div/div/div/div/div/div[2]/div[1]/div[1]/div/input").send_keys("/Users/ved/Documents/Projects/PdfCast/results/Coders/Coders_1.mp3")
-    #keys = uploader.send_keys()
-
-    #uploader.send_keys(Keys.RETURN)
-
+    xPath = "/html/body/div/div/div/div/div/div/div/div[2]/div[1]/div[1]/div/input"
+    # filePath = os.path.join("results/" + FILE + "/" + FILE + "_" + str(i) + ".mp3"
+    driver.find_element_by_xpath(xPath).send_keys("/Users/ved/Documents/Projects/PdfCast/results/Coders/Coders_1.mp3")
     
-    time.sleep(100)
+    # Waiting for file to upload
+    time.sleep(30)
+
+    # Click on the save episode button
+    driver.find_element_by_class_name("styles__saveButton___lWrNZ").click()
+
+    # Waiting for new code to be read by selenium
+    time.sleep(5)    
+
+    # Filling up the podcast details
+    driver.find_element_by_class_name("styles__modeToggleText___26-xx").click()
+    driver.find_element_by_id("title").send_keys(FILE)
+    driver.find_element_by_class_name("styles__textarea___2-sXZ").send_keys("Hi there")
+
+    # Pressing publish
+    driver.find_element_by_xpath(publishXpath).click()
+
+    time.sleep(30)
     driver.quit()
 
 
 
-#path = input()
+path = input()
 #text_arr = PdfToText(path)
 #TextToSpeech(text_arr)
 UploadPodcast()
