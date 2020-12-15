@@ -104,7 +104,8 @@ def UploadPodcast():
     time.sleep(5)
 
     # Clicking the button to open file dialog
-    uploader = driver.find_element_by_class_name("styles__uploadAudioIcon___1BcDm").click()
+    # uploader = driver.find_element_by_class_name("styles__uploadAudioIcon___1BcDm").click()
+    driver.find_element_by_xpath("/html/body/div/div/div/div/div/div/div/div[2]/div[1]/div[1]/div/input").send_keys("/Users/ved/Documents/Projects/PdfCast/results/Coders/Coders_1.mp3")
     #keys = uploader.send_keys()
 
     #uploader.send_keys(Keys.RETURN)
