@@ -1,3 +1,4 @@
+
 from pdfminer.high_level import extract_text
 from tkinter import Tk, filedialog
 from gtts import gTTS
@@ -13,14 +14,11 @@ START = 26
 END = 31
 SPLITTER = "< Chapter"
 
-MULTIPLIER = 1
-
 
 def input():
     """
     This function asks the user to input a file through the standard OS
     filewindow. It only accepts PDF's.
-
     Returns:
         path: The path to the PDF.
     """
@@ -47,10 +45,8 @@ def PdfToText(path):
     This function takes the path to a PDF from the START to END page numbers, 
     converts it to a String, splits it along the splitter, and returns the list
     of Strings.
-
     Args:
         path (String): [The path to the PDF file]
-
     Returns:
         [List]: [A list of Strings made up of the PDF text split across the SPLITTER]
     """
@@ -63,7 +59,6 @@ def TextToSpeech(text_arr):
     """
     Thie function takes an array of Strings and converts each String to an MP3 clip. It
     also saves them locally.
-
     Args:
         text_arr ([List]): [A list of Strings that need to converted to MP3 clips.]
     """
@@ -100,15 +95,17 @@ def UploadPodcast():
     password.send_keys(Keys.RETURN)
 
     # Waiting for new code to be read by selenium
-    time.sleep(5 * MULTIPLIER)
+    time.sleep(5)
 
-    # Clicking the button to open file dialog and uploading the file
-    uploadXpath = "/html/body/div/div/div/div/div/div/div/div[2]/div[1]/div[1]/div/input"
-    filePath = os.path + "results/" + FILE + "/" + FILE + "_" + str(i) + ".mp3"
-    driver.find_element_by_xpath(uploadXpath).send_keys("/Users/ved/Documents/Projects/PdfCast/results/Coders/Coders_1.mp3"
+    # Clicking the button to open file dialog
+    # uploader = driver.find_element_by_class_name("styles__uploadAudioIcon___1BcDm").click()
+    driver.find_element_by_xpath("/html/body/div/div/div/div/div/div/div/div[2]/div[1]/div[1]/div/input").send_keys("/Users/ved/Documents/Projects/PdfCast/results/Coders/Coders_1.mp3")
+    #keys = uploader.send_keys()
 
-    # Waiting for file to upload.
-    time.sleep(30 * MULTIPLIER)
+    #uploader.send_keys(Keys.RETURN)
+
+    
+    time.sleep(100)
     driver.quit()
 
 
