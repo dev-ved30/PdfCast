@@ -116,7 +116,7 @@ def UploadPodcast():
     driver.find_element_by_class_name("styles__textarea___2-sXZ").send_keys("Hi there")
 
     # Pressing publish
-    driver.find_element_by_xpath(publishXpath).click()
+    driver.find_element_by_class_name("styles__saveButtonWrapper___TrQYl").click()
 
     time.sleep(30)
     driver.quit()
