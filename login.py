@@ -1,3 +1,3 @@
-PROJECT_PATH = ""
+PROJECT_PATH = "" + "results/"
 EMAIL = ""
 PASSWORD = ""

@@ -77,7 +77,13 @@ def TextToSpeech(text_arr):
         i = i + 1
 
 def UploadPodcast(lenght):
+    """
+    This is a function that uploads the audio files to your Anchor Podcast. Once you add your
+    project path and credentials to the login.py file, it will log you in and upload all the audio files.
 
+    Args:
+        lenght ([int]): [Number of audio files generated]
+    """
 
     driver = webdriver.Chrome(PATH)
 
@@ -126,7 +132,7 @@ def UploadPodcast(lenght):
         # Filling up the podcast details
         driver.find_element_by_class_name("styles__modeToggleText___26-xx").click()
         driver.find_element_by_id("title").send_keys(FILE)
-        driver.find_element_by_class_name("styles__textarea___2-sXZ").send_keys("Hi there")
+        driver.find_element_by_class_name("styles__textarea___2-sXZ").send_keys("Episode " + str(i))
 
         # Pressing publish
         driver.find_element_by_class_name("styles__saveButtonWrapper___TrQYl").click()
@@ -137,8 +143,6 @@ def UploadPodcast(lenght):
 
         time.sleep(3)
     driver.quit()
-
-
 
 path = inputPdf()
 text_arr = PdfToText(path)
