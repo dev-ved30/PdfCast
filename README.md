@@ -13,7 +13,7 @@ The way it work is:
 
 ## Intallation:
 
-Assuming you have `Python` installed, you need to install the following libraries.
+Assuming you have `Python` set up, you need to install the following libraries.
 
 In your terminal, run:
 
@@ -27,13 +27,13 @@ https://sites.google.com/a/chromium.org/chromedriver/downloads
 
 ## Set Up
 
-You will need to enter your `Anchor` username and password into the `login.py` file for selenium to work as intended. You will also need to add the absolute path of your project file to `login.py`.
+You will need to add your `Anchor` username and password to the `login.py` file for selenium to work as intended. You will also need to add the absolute path of your project file to `login.py`.
 
 Within Anchor, you will need to create a Podcast which will let `Selenium` create new episodes automatically. 
 
 ## Running
 
-At this point, you should be able to use the tool. Please note that this is meant to be a command line tool.
+At this point, you should be able to use the utility. Please note that this is meant to be a command line tool.
 
 You can run `main.py` from your terminal. The utility will walk you through all the steps and by the end of it, you should have your podcats up on Anchor.
 
@@ -47,7 +47,7 @@ Please report any bugs in the `Issues` tab. I will try to solve them in a timely
 
 ## Future
 
-I created this project beacuse I didn't want to read a book for school. As it follows, the current implementation can be broken very, very easily. It's also uncomfortably reliant on `Anchor` for a large chunk of its functionality.
+I created this project beacuse I didn't want to read a book for school. As it follows, the current implementation can be broken very easily. It's also uncomfortably reliant on `Anchor` for a large chunk of its functionality.
 
 While this has worked for me, I acknowledge that it will not fit the work flow for many people. If there's enough interest, I would consider developing a host agnostic folk or recode the project entirely. Based on the feedback, I could also work on building a user interface to make the utility a little easier to use. 
 
