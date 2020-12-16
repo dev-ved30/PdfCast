@@ -1,2 +1,3 @@
+PROJECT_PATH = ""
 EMAIL = ""
 PASSWORD = ""
