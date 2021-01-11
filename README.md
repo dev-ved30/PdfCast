@@ -49,10 +49,10 @@ Please report any bugs in the `Issues` tab. I will try to solve them in a timely
 
 I created this project beacuse I didn't want to read a book for school. As it follows, the current implementation can be broken very easily. It's also uncomfortably reliant on `Anchor` for a large chunk of its functionality.
 
-While this has worked for me, I acknowledge that it will not fit the work flow for many people. If there's enough interest, I would consider developing a host agnostic folk or recode the project entirely. Based on the feedback, I could also work on building a user interface to make the utility a little easier to use. 
+While this has worked for me, I acknowledge that it will not fit the work flow for many people. If there's enough interest, I would consider developing a host agnostic fork or recode the project entirely. Based on the feedback, I could also work on building a user interface to make the utility a little easier to use. 
 
 As it stands, I will try to fix bugs and solve any major issues. 
 
-If you're interested in working on the project, you can start off with a folk and get in touch to discuss the specifics. I'm always up for nerdy stuff!
+If you're interested in working on the project, you can start off with a fork and get in touch to discuss the specifics. I'm always up for nerdy stuff!
 
 
